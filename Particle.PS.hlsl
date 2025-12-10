@@ -1,4 +1,4 @@
-#include "object3d.hlsli"
+#include "Particle.hlsli"
 
 struct Material
 {
@@ -17,9 +17,9 @@ struct PixelShaderOutput
 PixelShaderOutput main(VertexShaderOutput input)
 {
     PixelShaderOutput output;
-    float4 transformedUV = mul(float4(input.texcoord,0.0f,1.0f),gMaterial.uvTransform);
+    float4 transformedUV = mul(float4(input.texcoord, 0.0f, 1.0f), gMaterial.uvTransform);
     float4 textureColor = gTexture.Sample(gSampler, input.texcoord);
-    output.color = gMaterial.color*textureColor;
+    output.color = gMaterial.color * textureColor;
     
     //textureのα値が0のときにPixelを棄却
     if(textureColor.a==0.0)
