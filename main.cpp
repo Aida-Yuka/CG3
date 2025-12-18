@@ -1604,7 +1604,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	}
 	rootSignature->Release();
 	pixelShaderBlob->Release();
-	indexResourceSprite->Release();
+	instancingResource->Release();
 	vertexShaderBlob->Release();
 
 	materialResource->Release();
